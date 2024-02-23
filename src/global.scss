@@ -1,0 +1,30 @@
+:root {
+    --primary-color: rgb(255, 212, 194); 
+    --secondary-color: #706f7b; 
+}
+  
+* {
+    margin: 0; 
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0; 
+    padding: 0; 
+}
+  
+a {
+      display: block; 
+      text-decoration: none;
+      color: black; 
+}
+
+span {
+    display: inline-block; 
+}
+  
+
+  
