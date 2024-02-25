@@ -210,12 +210,12 @@ function Register() {
         </form>
         <SectionDivider/>
         <div className='register__option'>
-            <span>Already have an account</span>
+            <span>Already have an account?</span>
 
             <div className='form__button-container'>
-              {/* <Link to='/signin'>
+              <Link to='/signin'>
                 <button className='form__button form__button-stylesWhite'>Sign In</button>
-              </Link> */}
+              </Link>
             </div>
         </div>
        

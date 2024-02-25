@@ -2,10 +2,10 @@ import './Login.scss'
 import SectionDivider from '/src/components/sectionDivider/SectionDivider'
 import axios from 'axios'
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 
 function Login() {
-  const [emailAddress, setEmailAddress] = useState(''); 
+  const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState(''); 
 
   const handleInputChange = (state, stateHandler) => {
@@ -16,7 +16,7 @@ function Login() {
     event.preventDefault; 
 
     let data = {
-      emailAddress: emailAddress,
+      email: email,
       password: password, 
     }
 
@@ -34,9 +34,9 @@ function Login() {
         <form className='login__form'>
         <span>Sign In</span>
             <div className='login__form-group'>
-              <label htmlFor='emailAddress'>Email Address</label>
+              <label htmlFor='email'>Email Address</label>
               <div className='login__textBox'>
-                <input value={emailAddress} onChange={(e) => {handleInputChange(e.target.value, setEmailAddress)}}type='text' id='emailAddress' name='emailAddress'></input>
+                <input value={email} onChange={(e) => {handleInputChange(e.target.value, setEmail)}}type='text' id='email' name='email'></input>
               </div>
             </div>
            
@@ -52,14 +52,14 @@ function Login() {
             </div>
         </form>
         <SectionDivider/>
-        {/* <div className='login__option'>
+        <div className='login__option'>
             <span>Don't have an account?</span>
             <div className='form__button-container'>
               <Link to='/register'>
                 <button className='form__button form__button-stylesWhite'>Create Account</button>
               </Link>
             </div>
-        </div> */}
+        </div>
        
     </section>
   )
