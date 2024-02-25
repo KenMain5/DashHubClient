@@ -134,7 +134,7 @@ function Register() {
       firstName: firstName, 
       email: email, 
       password: password, 
-      city: city
+      cityName: city
     }
 
     axios.post('http://localhost:8080/api/register', userData, {
