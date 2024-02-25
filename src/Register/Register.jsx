@@ -137,7 +137,7 @@ function Register() {
       cityName: city
     }
 
-    axios.post('http://localhost:8080/api/register', userData, {
+    axios.post('http://localhost:8080/register', userData, {
       headers: {
         'Content-Type': 'application/json'
       }
