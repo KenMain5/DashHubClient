@@ -1,8 +1,9 @@
 import './Register.scss'
 import SectionDivider from '/src/components/sectionDivider/SectionDivider'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; 
 import { useState, useEffect } from 'react'; 
+import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
   const [email, setEmail] = useState(''); 
@@ -25,6 +26,8 @@ function Register() {
   const [cityValidated, setCityValidated] = useState(false);
   const [cityTouched, setCityTouched] = useState(false);
 
+  const navigate = useNavigate();
+
   const cities = [
     { name: "New York" },
     { name: "Los Angeles" },
@@ -37,6 +40,17 @@ function Register() {
     const error = ''; // Implement any specific validation logic for city if needed
     setCityError(error);
     setCityValidated(!error);
+  };
+
+  const notify = () => {
+    toast("Login successful!", {
+      position: "top-center",
+      autoClose: false, // Disable auto-close
+      closeOnClick: true, // Allow closing by clicking anywhere on the toast
+      pauseOnHover: true,
+      draggable: true, // Allow drag to dismiss
+      theme: "colored", // Use the default colored theme
+    });
   };
 
  
@@ -144,6 +158,7 @@ function Register() {
     })
     .then(results => {
       console.log('success', results); 
+      navigate('/signin');
     })
     .catch(err => {
       console.log("there was an error", err.response); 

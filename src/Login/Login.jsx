@@ -22,15 +22,21 @@ function Login() {
 
     axios.post('/login', data)
     .then(() => {
+      
       console.log('axios post request login sent'); 
     })
     .catch(err => {
       console.log('axios post request login failed', err); 
     })
   };
+  
+  
+
+
 
   return (
     <section className='login'>
+       
         <form className='login__form'>
         <span>Sign In</span>
             <div className='login__form-group'>
